@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Стек
 
-+html
-+scss
-+react
-+gulp
++ html
++ scss
++ react
++ gulp
