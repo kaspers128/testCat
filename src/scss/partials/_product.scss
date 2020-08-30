@@ -1,0 +1,173 @@
+.product{
+
+    margin: 0 auto 25px;
+    max-width: 320px;
+
+    @include phones-medium{
+        width: 320px;
+        margin: 0 20px 25px;
+    }
+
+    @include desktop{
+        margin: 0;
+    }
+
+    &:hover{
+        button{
+            color: $colorDefaultHover;
+        }
+    }
+
+    &__top{
+        padding: 4px;
+        background-image: linear-gradient(135deg,transparent 5.5%,$colorDefault 0);
+        position: relative;
+        cursor: pointer;
+        border-radius: 10px;
+
+        &:hover{
+            background-image: linear-gradient(135deg,transparent 5.5%,$colorDefaultHover 0);
+            .product__weight{
+                background: $colorDefaultHover;
+            }
+        }
+
+        &.product__top-active{
+            background-image: linear-gradient(135deg,transparent 5.5%,$colorActive 0);
+
+            &:hover{
+                background-image: linear-gradient(135deg,transparent 5.5%,$colorActiveHover 0);
+
+                .product__weight {
+                    background: $colorActiveHover;
+                }
+
+                .product__head{
+                    color: $colorActiveHover;
+                }
+            }
+            
+            .product__weight {
+                background: $colorActive;
+            }
+
+            .product__head{
+                color: $colorActive;
+            }
+        }
+
+        &.product__top-disabled{
+            background-image: linear-gradient(135deg,transparent 5.5%,$colorDisabled 0);
+            cursor: default;
+            
+            & > * {
+                opacity: .5;
+            }
+
+            .product__weight {
+                background: $colorDisabled;
+            }
+        }
+
+        .product__inner {
+            background-image: linear-gradient(135deg,transparent 5.5%,#fff 0);
+            padding: 22px 0 0;
+            border-radius: 10px;
+        }
+
+        .product__head{
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .product__name{
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .product__flavor{
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product__desc{
+            margin-bottom: 33px;
+            font-size: 14px;
+
+            @include desktop{
+                min-height: 50px;
+            }
+        }
+
+        .product__desc{
+            font-size: 14px;
+            color: #666;
+
+            span{
+                display: block;
+            }
+        }
+
+        .product__img{
+            
+            border-radius: 10px;
+            overflow: hidden;
+            
+            img{
+                display: block;
+            }
+        }
+
+        .product__weight {
+            font-size: 34px;
+            color: #fff;
+            position: absolute;
+            right: 9px;
+            bottom: 9px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: $colorDefault;
+            border-radius: 50%;
+            line-height: 25px;
+
+            div{
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__pl{
+        padding-left: 45px;
+    }
+
+    &__bottom {
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        min-height: 40px;
+
+        @include phones-medium{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        button{
+            cursor: pointer;
+            color: $colorDefault;
+            font-weight: bold;
+            border-bottom: 1px dashed;
+        }
+
+        .product__warning{
+            color: #ffff66;
+        }
+    }
+
+}

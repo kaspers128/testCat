@@ -1,0 +1,47 @@
+$fz: 16px;
+$ff: 'Trebuchet MS', arial, sans-serif;
+$ffExo: 'Exo', 'Trebuchet MS', arial, sans-serif;
+
+$colorDefault: #1698d9;
+$colorDefaultHover: #2ea8e6;
+$colorActive: #d91667;
+$colorActiveHover: #e62e7a;
+$colorDisabled: #b3b3b3;
+
+body{
+    font-size: $fz;
+    font-family: $ff;
+    background-image: url(../../images/bg-min.png);
+    padding: 15px;
+
+    @include desktop{
+        padding: 0;
+    }
+}
+
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1120px;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.app{
+    width: 100%;
+}
+
+main{
+    @include phones-medium{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    @include desktop{
+        justify-content: space-between;
+    }
+}
